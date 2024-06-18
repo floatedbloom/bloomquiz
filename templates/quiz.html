@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ quiz.name }}
+{% endblock %}
+
+{% block main %}
+<h3>{{ quiz.name }}</h3>
+<form method="post" action="{{ url_for('open_quiz', quiz_id=quiz[0]['id']) }}">
+    {% for question in questions %}
+        <p>{{ question.question_text }}</p>
+        {% for i in range(1,5) %}
+            <input type="radio" name="question_{{ question.id }}" value="{{ i|string }}"> {{ question["answer_" + i|string] }}
+            <br>
+        {% endfor %}
+        <br>
+        <p> </p>
+    {% endfor %}
+    <button type="submit">Submit Answers</button>
+</form>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Your Quizzes
+{% endblock %}
+
+{% block main %}
+<h3>Your Quizzes</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th type="centered" class="text-start">Name</th>
+            <th type="centered" class="text-start">Difficulty</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for quiz in quizzes %}
+            <tr>
+                <td class="text-start"><a href="/quiz/{{ quiz.id }}">{{ quiz.name }}</a></td>
+                <td class="text-start">{{ quiz["difficulty"] }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

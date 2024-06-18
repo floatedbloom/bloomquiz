@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Grammar Quiz
+{% endblock %}
+
+{% block main %}
+    <head>
+        <h2>Grammar Quiz</h2>
+    </head>
+    <body>
+        <form method="post" action="/grammar">
+                <p>What does every sentence need alongside a subject?</p>
+                <input type="radio" name="question_1" value="correct">An object
+                <input type="radio" name="question_1" value="incorrect">An adjective
+                <input type="radio" name="question_1" value="incorrect">A prepositional phrase
+                <input type="radio" name="question_1" value="incorrect">A comma
+            <br>
+                <p>Which isn't a tense?</p>
+                <input type="radio" name="question_2" value="incorrect">Past
+                <input type="radio" name="question_2" value="correct">Current
+                <input type="radio" name="question_2" value="incorrect">Future
+                <input type="radio" name="question_2" value="incorrect">Present
+            <br>
+                <p>What do adjectives describe?</p>
+                <label><input type="radio" name="question_3" value="correct">Nouns</label>
+                <label><input type="radio" name="question_3" value="incorrect">Verbs</label>
+                <label><input type="radio" name="question_3" value="incorrect">Subjects</label>
+                <label><input type="radio" name="question_3" value="incorrect">Objects</label>
+            <br>
+                <p>What punctuation is used to create a conjunction?</p>
+                <input type="radio" name="question_4" value="correct">Apostrophe
+                <input type="radio" name="question_4" value="incorrect">Comma
+                <input type="radio" name="question_4" value="incorrect">Colon
+                <input type="radio" name="question_4" value="incorrect">Single quote
+            <br>
+                <p>What is does a prepositional phrase refer to?</p>
+                <input type="radio" name="question_5" value="incorrect">A subject
+                <input type="radio" name="question_5" value="incorrect">An object
+                <input type="radio" name="question_5" value="correct">An antecedent
+                <input type="radio" name="question_5" value="incorrect">A complexity
+            <br>
+            <br>
+            <button type="submit" class="button1">Submit Answers</button>
+        </form>
+    </body>
+{% endblock %}

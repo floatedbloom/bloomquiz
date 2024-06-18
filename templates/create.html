@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block title %}
+     Create Quiz
+{% endblock %}
+
+{% block main %}
+<head>
+    <h2>Create A Quiz</h2>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var createButton = document.getElementById('create');
+
+            createButton.addEventListener('click', function (event) {
+                event.preventDefault();
+                hide();
+            });
+
+        });
+
+        function hide() {
+            var part1 = document.getElementById("part-1");
+            var part2 = document.getElementById("part-2");
+            var create = document.getElementById('create');
+
+            if (part1.style.display == "block") {
+                part1.style.display = "none";
+                part2.style.display = "block";
+                create.style.display = "none";
+            } else {
+                part1.style.display = "block";
+                part2.style.display = "none";
+                create.style.display = "block";
+            }
+        }
+    </script>
+</head>
+<body style="text-align: center">
+    <form id="quizform" method="post" action="/create">
+        <div id="part-1" style="display: block">
+                <label>Quiz Title:</label>
+                <input type="text" name="quiz_title" required>
+                <br>
+                <p> </p>
+                <label>Difficulty:</label>
+                <input type="number" min="1" max="5" name="difficulty" required>
+                <br>
+                <p> </p>
+        </div>
+        <div id="part-2" style="display: none">
+            <h3>Quiz Questions</h3>
+                {% for i in range(1, 5) %}
+                    <label>Question {{ i }} Text:</label>
+                    <input type="text" id="{{i}}_text" name="{{i}}_text">
+                    <br>
+                    <p> </p>
+                    <label>Question {{ i }} Answers:</label>
+                    <input type="text" id="{{i}}_1" name="{{i}}_1">
+                    <input type="text" id="{{i}}_2" name="{{i}}_2">
+                    <input type="text" id="{{i}}_3" name="{{i}}_3">
+                    <input type="text" id="{{i}}_4" name="{{i}}_4">
+                    <br>
+                    <p> </p>
+                    <label>Which Answer is Correct?</label>
+                    <select id="{{i}}_correct" name="{{i}}_correct">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                    <br>
+                    <p> </p>
+                {% endfor %}
+                <button type="submit" id="submit" class="btn-1">Submit Quiz</button>
+        </div>
+    </form>
+    <button id="create" class="btn-1" style="display: block; margin: 0 auto">Confirm</button>
+</body>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Result
+{% endblock %}
+
+{% block main %}
+    <head>
+        <h2 class="text-center">Result</h2>
+    </head>
+    <body>
+        <table class="table">
+            <tr>
+                <th>Topic</th>
+                <th>Problems </th>
+                <th># Correct</th>
+                <th>% Correct</th>
+            </tr>
+            <tr>
+                <td>{{ topic }}</td>
+                <td>{{ questions }}</td>
+                <td>{{ corrects }}</td>
+                <td>{{ percent }}%</td>
+            </tr>
+        </table>
+        <a href="/"><button class="button1">Return Home</button></a>
+    </body>
+{% endblock %}

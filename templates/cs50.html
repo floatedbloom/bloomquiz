@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    CS50 Quiz
+{% endblock %}
+
+{% block main %}
+    <head>
+        <h2>CS50 Quiz</h2>
+    </head>
+    <body>
+        <form method="post" action="/cs50">
+            <p>What school is CS50 at?</p>
+                <input type="radio" name="question_1"value="incorrect">Princeton
+                <input type="radio" name="question_1" value="correct">Harvard
+                <input type="radio" name="question_1" value="incorrect">Stanford
+                <input type="radio" name="question_1" value="incorrect">UCLA
+            <p>Who is the professor of CS50?</p>
+                <input type="radio" name="question_2" value="incorrect">David Molon
+                <input type="radio" name="question_2" value="incorrect">Davis Mallan
+                <input type="radio" name="question_2" value="correct">David Malan
+                <input type="radio" name="question_2" value="incorrect">Daniel Melon
+            <p>How many weeks long is CS50?</p>
+                <input type="radio" name="question_3" value="incorrect">9
+                <input type="radio" name="question_3" value="incorrect">12
+                <input type="radio" name="question_3" value="incorrect">8
+                <input type="radio" name="question_3" value="correct">10
+            <p>What is the topic of the optional lecture?</p>
+                <input type="radio" name="question_4" value="correct">Cybersecurity
+                <input type="radio" name="question_4" value="incorrect">Assembly
+                <input type="radio" name="question_4" value="incorrect">Game Design
+                <input type="radio" name="question_4" value="incorrect">Digital Design
+            <p>What is the CS50 codespace?</p>
+                <input type="radio" name="question_5" value="incorrect">CS50 IDE
+                <input type="radio" name="question_5" value="correct">VSCode
+                <input type="radio" name="question_5" value="incorrect">JetBrains
+                <input type="radio" name="question_5" value="incorrect">Scratch
+            <br>
+            <br>
+            <button type="submit" class="button1">Submit Answers</button>
+        </form>
+    </body>
+{% endblock %}

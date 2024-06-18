@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Math Quiz
+{% endblock %}
+
+{% block main %}
+    <head>
+        <h2>Math Quiz</h2>
+    </head>
+    <body>
+        <form method="post" action="/math">
+                <p>Solve for x in the equation 2x+8=20?</p>
+                <input type="radio" name="question_1" value="correct">6
+                <input type="radio" name="question_1" value="incorrect">11
+                <input type="radio" name="question_1" value="incorrect">13
+                <input type="radio" name="question_1" value="incorrect">7
+            <br>
+                <p>What is the result of 2*(4+3)-5?</p>
+                <input type="radio" name="question_2" value="incorrect">4
+                <input type="radio" name="question_2" value="correct">9
+                <input type="radio" name="question_2" value="incorrect">7
+                <input type="radio" name="question_2" value="incorrect">8
+            <br>
+                <p>What is 6C2?</p>
+                <label><input type="radio" name="question_3" value="correct">15</label>
+                <label><input type="radio" name="question_3" value="incorrect">12</label>
+                <label><input type="radio" name="question_3" value="incorrect">16</label>
+                <label><input type="radio" name="question_3" value="incorrect">11</label>
+            <br>
+                <p>What is 7!?</p>
+                <input type="radio" name="question_4" value="correct">5040
+                <input type="radio" name="question_4" value="incorrect">4001
+                <input type="radio" name="question_4" value="incorrect">5060
+                <input type="radio" name="question_4" value="incorrect">5001
+            <br>
+                <p>What is 5+5?</p>
+                <input type="radio" name="question_5" value="incorrect">8
+                <input type="radio" name="question_5" value="incorrect">12
+                <input type="radio" name="question_5" value="correct">10
+                <input type="radio" name="question_5" value="incorrect">5
+            <br>
+            <br>
+            <button type="submit" class="button1">Submit Answers</button>
+        </form>
+    </body>
+{% endblock %}

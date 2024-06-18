@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+<h3>Your Stats</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th type="centered" class="text-start">Subject</th>
+            <th type="centered" class="text-start">Amount Correctly Answered</th>
+            <th type="centered" class="text-start">Total Problems Done</th>
+            <th type="centered" class="text-start">Percentage Correctly Answered</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in stats %}
+            <tr>
+                <td class="text-start">{{ row["subject"] }}</td>
+                <td class="text-start">{{ row["correct"] }}</td>
+                <td class="centered">{{ row["total"] }}</td>
+                <td class="centered">{{ row["percent"] }}%</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
