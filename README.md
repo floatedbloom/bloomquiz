@@ -1,7 +1,7 @@
-# CS50 Quizzes
+# Bloom Quiz
 #### Video Demo:  <URL https://www.youtube.com/watch?v=MHDgeOUYp1U>
 #### Description:
-    CS50 Quizzes is a website with quiz creation and taking capabilities. Starting out, you must register, you can't log in without knowing any account details. The registration has a password confirmation to
+Bloom Quiz is a website with quiz creation and taking capabilities. Starting out, you must register, you can't log in without knowing any account details. The registration has a password confirmation to
 make sure that you remember your password and didn't make a typo. The registration details are stored in a sql database, then when you attempt to log in it checks your provided login details with all details
 from the sql database. Once you login, you can logout or change your password. When you log in, you are greeted with the home page. It simply is a table of your stats which will initially be empty. I created 3
 preloaded quizzes which each user will have access to: CS50, Math, and Grammar. The quizzes are each 5 questions with radio buttons to select answers and have their own html files and functions. Each one's
